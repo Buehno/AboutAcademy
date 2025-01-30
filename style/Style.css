@@ -1,61 +1,63 @@
 body {
-    margin: 0;
-    font-family: sans-serif;
-  }
-  
-  #back-to-top {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 100; /* Para ficar acima do vídeo */
-  }
-  
-  .video-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* O vídeo ocupa 100% da tela */
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa a tela */
-  }
-  
-  .video-container video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-  }
-  
-  .faq-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  
-  .faq-card {
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .faq-question {
-    padding: 10px;
-    background-color: #f0f0f0;
-  }
-  
-  .faq-answer {
-    padding: 10px;
-    display: none; /* Começa escondido */
-  }
-  
-  .faq-card.active .faq-answer {
-    display: block; /* Exibe quando o card está ativo */
-  }
+  margin: 0;
+  font-family: sans-serif;
+  overflow: hidden; /* Remove a rolagem */
+}
+
+#back-to-top {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 100; /* Para ficar acima do vídeo */
+}
+
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Ocupa toda a altura da tela */
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que o vídeo cubra toda a tela */
+}
+
+.faq-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  position: relative;
+  z-index: 10; /* Garante que os FAQs fiquem acima do vídeo */
+  background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+  border-radius: 10px;
+}
+
+.faq-card {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.faq-question {
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.faq-answer {
+  padding: 10px;
+  display: none;
+}
+
+.faq-card.active .faq-answer {
+  display: block;
+}
